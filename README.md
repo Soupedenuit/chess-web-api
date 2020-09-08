@@ -23,7 +23,7 @@ I'll try to keep this library updated if they're API changes, feel free to submi
 # Additional Features
 
 ## Priority Queue
-**chess-web-api** can be inicialized with a [priority queue](#usage-with-queue) for requests to prevent parellel requests. Requests will be sent as soon as the previous returns. 
+**chess-web-api** can be initialized with a [priority queue](#usage-with-queue) for requests to prevent parallel requests. Requests will be sent as soon as the previous returns. 
 
 Using the queue requires passing in a **callback function** for the result to be sent to.
 
@@ -104,7 +104,7 @@ var ChessWebAPI = require('chess-web-api');
 
 var chessAPI = new ChessWebAPI();
 ```
-If you wish to use the built in [priority queue](#usage-with-queue) to avoid parallel requests, add the following paramter to the constructor:
+If you wish to use the built in [priority queue](#usage-with-queue) to avoid parallel requests, add the following parameter to the constructor:
 ```
 var chessAPI = new ChessWebAPI({
     queue: true
@@ -114,7 +114,7 @@ var chessAPI = new ChessWebAPI({
 
 ## Usage (Without Queue)
 
-To use chess-web-api, once you've create an instance of the library, call any of the functions on it.
+To use chess-web-api, once you've created an instance of the library, call any of the functions on it.
 ```
 var ChessWebAPI = require('chess-web-api');
 
@@ -138,7 +138,7 @@ chessAPI.getTitledPlayers('GM')
 
 ## Usage (With Queue)
 
-[Chess.com's API](https://www.chess.com/news/view/published-data-api#game-results) doesn't rate limit unless you've made parallel requests. If you have more than two active requests at a time, you'll recieve a **429 Too Many Requests** error. 
+[Chess.com's API](https://www.chess.com/news/view/published-data-api#game-results) doesn't rate limit unless you've made parallel requests. If you have more than two active requests at a time, you'll receive a **429 Too Many Requests** error. 
 
 To add something to the queue, use the method **dispatch**.
 ```
@@ -192,7 +192,7 @@ chessAPI.dispatch(chessAPI.getPlayerCurrentDailyChess, printResults, ["andyruwru
 chessAPI.dispatch(chessAPI.getPlayerCompleteMonthlyArchives, printResults, ["andyruwruw", 2019, 10], {}, ["callback parameter"]);
 ```
 
-If you inicialize your **ChessWebAPI** with the queue enabled, you can still call any of the regular functions without using the queue.
+If you initialize your **ChessWebAPI** with the queue enabled, you can still call any of the regular functions without using the queue.
 
 ```
 var ChessWebAPI = require('chess-web-api');
@@ -256,12 +256,12 @@ chessAPI.clearQueue();
 
 ### Returns: **Object**
 
-**ifChanged** allows you to make any of the helper functions with the added parameter of the **etag** provided in the header of the last simular request.
+**ifChanged** allows you to make any of the helper functions with the added parameter of the **etag** provided in the header of the last similar request.
 
 ifChanged will return either of the following:
 
 ```
-// If data has changed, response is attatched.
+// If data has changed, response is attached.
 {
     changed: true,
     response: // response from chess.com
@@ -418,7 +418,7 @@ trackGames();
 .getPlayerOnline(username, options, callback)
 ```
 ### Description: 
-*Tells if an user has been online in the last five minutes.*
+*Tells if a user has been online in the last five minutes.*
 
 ### Parameters:
 
@@ -660,7 +660,7 @@ trackGames();
 .getPlayerMatches(username, options, callback)
 ```
 ### Description: 
-*List of Team matches the player has attended, is partecipating or is currently registered.*
+*List of Team matches the player has attended, is participating in or is currently registered in.*
 
 ### Parameters:
 
@@ -713,7 +713,7 @@ trackGames();
 .getPlayerTournaments(username, options, callback)
 ```
 ### Description: 
-*List of tournaments the player is registered, is attending or has attended in the past.*
+*List of tournaments the player is registered in, is attending or has attended in the past.*
 
 ### Parameters:
 
@@ -805,7 +805,7 @@ trackGames();
 .getClubMembers(urlID, options, callback)
 ```
 ### Description: 
-*List of club members (usernames and joined date timestamp), grouped by club-activity frequency. The club-activity is one of this actions:*
+*List of club members (usernames and joined date timestamp), grouped by club-activity frequency. The club-activity is one of these actions:*
 
 ### Parameters:
 
